@@ -1,0 +1,127 @@
+/*? global clearing */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&family=Press+Start+2P&display=swap");
+
+*,
+html,
+body {
+  background-color: rgb(9, 9, 24);
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-align: center;
+  font-family: "Press Start 2P", cursive;
+}
+
+nav {
+  background-color: rgb(169, 11, 58);
+  padding: 10px 0;
+  margin-bottom: 1em;
+}
+
+nav .container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1em;
+  background-color: rgb(169, 11, 58);
+}
+
+h1,
+h3,
+span {
+  background-color: rgb(169, 11, 58);
+}
+
+.container {
+  width: 90%;
+  height: 100%;
+  margin: auto;
+}
+
+.mainBoard {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1em;
+  position: relative;
+}
+
+.board {
+  display: grid;
+  grid-template: repeat(30, 1fr) / repeat(30, 1fr); /* y - x*/
+  border: 1px solid white;
+  height: 80vh;
+  background-color: rgb(17, 17, 39);
+  overflow: hidden;
+}
+
+.notif-level figcaption {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 1em;
+  visibility: hidden;
+  transition: 0.3s ease-in-out;
+}
+
+.notif-level figcaption.show {
+  visibility: visible;
+  background-color: rgba(17, 17, 39, 0.4);
+}
+
+.food {
+  background: url(../assets/coin.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.player {
+  background: url(../assets/korup.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.btnArrow {
+  display: none;
+  grid-template-columns: repeat(auto);
+  gap: 1em;
+  border: none;
+  padding: 10px;
+  /* background: rgba(179, 17, 65); */
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  z-index: 1;
+}
+
+button {
+  font-size: 2em;
+  border: none;
+  background: transparent;
+  color: white;
+}
+
+.btnLr {
+  display: grid;
+  gap: 1em;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/* smartphone view */
+@media screen and (max-width: 400px) {
+  .board {
+    height: 80vh;
+  }
+
+  h2,
+  h3 {
+    font-size: 0.5em;
+  }
+
+  .btnArrow {
+    display: grid;
+  }
+}
